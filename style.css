@@ -107,13 +107,13 @@ body {
 
     #container {
         width: calc(100vw - 4vh);
-        height: 86vh;
+        height: 76vh;
         flex-direction: column;
     }
 
     #imgContainer {
         width: calc(100vw - 4vh);
-        height: 40vh;
+        height: 30vh;
     }
 
     .cardContainer {
