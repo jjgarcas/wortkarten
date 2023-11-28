@@ -1,7 +1,7 @@
 const words = [
     { genre: 'f', singular: 'Flasche', plural: 'Flaschen', id: 'flasche' },
     { genre: 'm', singular: 'Kuli', plural: 'Kulis', id: 'kuli' },
-    { genre: 'n', singular: 'Handy', plural: 'Handies', id: 'handy' },
+    { genre: 'n', singular: 'Handy', plural: 'Handys', id: 'handy' },
     { genre: 'm', singular: 'Radiergummi', plural: 'Radiergummis', id: 'radiergummi' },
     { genre: 'm', singular: 'Bleistift', plural: 'Bleistifte', id: 'bleistift' },
     { genre: 'n', singular: 'Buch', plural: 'Bücher', id: 'buch' },
@@ -17,7 +17,7 @@ const words = [
     { genre: 'f', singular: 'Lampe', plural: 'Lampen', id: 'lampe' },
     { genre: 'f', singular: 'Jacke', plural: 'Jacken', id: 'jacke' },
     { genre: 'f', singular: 'Tür', plural: 'Türen', id: 'tur' },
-    { genre: 'm', singular: 'Kursraum', plural: '', id: 'kursraum' },
+    { genre: 'm', singular: 'Kursraum', plural: 'Kursräume', id: 'kursraum' },
     { genre: 'f', singular: 'Wand', plural: 'Wände', id: 'wand' },
     { genre: 'm', singular: 'Boden', plural: 'Böden', id: 'boden' },
     { genre: 'f', singular: 'Uhr', plural: 'Uhren', id: 'uhr' },
@@ -39,5 +39,16 @@ const words = [
     { genre: 'm', singular: 'Monat', plural: 'Monate', id: 'monat' },
     { genre: 'm', singular: 'Salat', plural: 'Salate', id: 'salat' },
     { genre: 'n', singular: 'Glas', plural: 'Gläser', id: 'glas' },
-    { genre: 'f', singular: 'Rechnung', plural: 'Rechnungen', id: 'rechnung' }
+    { genre: 'f', singular: 'Rechnung', plural: 'Rechnungen', id: 'rechnung' },
+    { genre: 'f', singular: 'Zahl', plural: 'Zahlen', id: 'zahl' },
+    { genre: 'f', singular: 'Süßigkeit', plural: 'Süßigkeiten', id: 'sussigkeit' },
+    { genre: 'n', singular: 'Mäppchen', plural: 'Mäppchen', id: 'mappchen' },
+    { genre: 'n', singular: 'Taschentuch', plural: 'Taschentücher', id: 'taschentuch' },
+    { genre: 'm', singular: 'Lutscher', plural: 'Lutscher', id: 'lutscher' },
+    { genre: 'm', singular: 'Rucksack', plural: 'Rucksäcke', id: 'rucksack' },
+    { genre: 'm', singular: 'Computer', plural: 'Computer', id: 'computer' },
+    { genre: 'm', singular: 'Laptop', plural: 'Laptops', id: 'laptop' },
+    { genre: 'm', singular: 'Spitzer', plural: 'Spitzer', id: 'spitzer' },
+    { genre: 'm', singular: 'Kopfhörer', plural: 'Kopfhörer', id: 'kopfhorer' },
+    { genre: 'f', singular: 'Geige', plural: 'Geigen', id: 'geige' }
 ];
