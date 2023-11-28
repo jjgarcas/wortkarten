@@ -44,6 +44,7 @@ body {
     border: 1vw solid black;
     border-radius: 4vw;
     background-color: white;
+    color: white;
 }
 
 #container.reveal .card {
@@ -56,7 +57,9 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
+    border-radius: 3vw;
     transform: rotateY(0deg);
+    background-color: white;
     background-image: url(./assets/flip_icon.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -74,16 +77,16 @@ body {
     text-align: center;
 }
 
-#container.genre_m .cardBack {
-    color: blue;
+#container.genre_m .card {
+    background-color: orange;
 }
 
-#container.genre_f .cardBack {
-    color: red;
+#container.genre_f .card {
+    background-color: blue;
 }
 
-#container.genre_n .cardBack {
-    color: green;
+#container.genre_n .card {
+    background-color: green;
 }
 
 #cardNext {
@@ -93,12 +96,13 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    visibility: hidden;
     cursor: pointer;
-}
-
-#container.reveal #cardNext {
-    visibility: visible;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
 }
 
 @media (orientation: portrait) {
@@ -126,6 +130,10 @@ body {
         height: 21vh;
         border: 1vh solid black;
         border-radius: 4vh;
+    }
+
+    #cardFront {
+        border-radius: 3vh;
     }
 
     #cardNext {
