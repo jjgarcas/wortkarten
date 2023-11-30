@@ -50,5 +50,22 @@ const words = [
     { genre: 'm', singular: 'Laptop', plural: 'Laptops', id: 'laptop' },
     { genre: 'm', singular: 'Spitzer', plural: 'Spitzer', id: 'spitzer' },
     { genre: 'm', singular: 'Kopfhörer', plural: 'Kopfhörer', id: 'kopfhorer' },
-    { genre: 'f', singular: 'Geige', plural: 'Geigen', id: 'geige' }
+    { genre: 'f', singular: 'Geige', plural: 'Geigen', id: 'geige' },
+    { genre: 'm', singular: 'Füller', plural: 'Füller', id: 'fuller' },
+    { genre: 'f', singular: 'Stadt', plural: 'Städte', id: 'stadt' },
+    { genre: 'f', singular: 'Pizza', plural: 'Pizzen', id: 'pizza' },
+    { genre: 'm', singular: 'Schuh', plural: 'Schuhe', id: 'schuh' },
+    { genre: 'n', singular: 'Ladekabel', plural: 'Ladekabel', id: 'ladekabel' },
+    { genre: 'm', singular: 'USB-Stick', plural: 'USB-Sticks', id: 'usb-stick' },
+    { genre: 'm', singular: 'Hut', plural: 'Hüte', id: 'hut' },
+    { genre: 'n', singular: 'Kleid', plural: 'Kleider', id: 'kleid' },
+    { genre: 'm', singular: 'Lippenstift', plural: 'Lippenstifte', id: 'lippenstift' },
+    { genre: 'f', singular: 'Sonnenbrille', plural: 'Sonnenbrillen', id: 'sonnenbrille' },
+    { genre: 'f', singular: 'Batterie', plural: 'Batterien', id: 'batterie' },
+    { genre: 'f', singular: 'Handyhülle', plural: 'Handyhüllen', id: 'handyhulle' },
+    { genre: 'f', singular: 'Hose', plural: 'Hosen', id: 'hose' },
+    { genre: 'f', singular: 'Kette', plural: 'Ketten', id: 'kette' },
+    { genre: 'm', singular: 'Ring', plural: 'Ringe', id: 'ring' },
+    { genre: 'm', singular: 'Koffer', plural: 'Koffer', id: 'koffer' },
+    { genre: 'n', singular: 'Spielzeug', plural: 'Spielzeuge', id: 'spielzeug' }
 ];
