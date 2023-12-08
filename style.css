@@ -1,4 +1,10 @@
-html,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
 body {
     font-family: arial;
     padding: 2vw;
@@ -10,6 +16,10 @@ body {
     height: 100%;
     box-sizing: border-box;
     overflow: hidden;
+}
+
+.hidden {
+    display: none;
 }
 
 #container {
@@ -105,6 +115,74 @@ body {
     user-select: none;
 }
 
+#settingsIcon {
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url(./assets/settings_icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+#settingsIcon.closeIcon {
+    background-image: url(./assets/close_icon.png);
+}
+
+#settingsContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 8vw 2vw 2vw 2vw;
+    background-color: rgba(0, 0, 0, 0.95);
+    color: white;
+}
+
+.lessonContainer {
+    display: flex;
+}
+
+.lessonName {
+    flex-grow: 1;
+    margin-bottom: 2vw;
+}
+
+.lessonToggle {
+    width: 6vw;
+    height: 4vw;
+    border-radius: 2vw;
+    background-color: white;
+    position: relative;
+}
+
+.lessonToggle::after {
+    display: block;
+    position: absolute;
+    right: 0;
+    content: '';
+    width: 4vw;
+    height: 4vw;
+    border-radius: 2vw;
+    background-color: #186A02;
+}
+
+.lessonToggle.disabled::after {
+    background-color: gray;
+    right: auto;
+    left: 0;
+}
+
 @media (orientation: portrait) {
     body {
         padding: 2vh;
@@ -139,6 +217,33 @@ body {
     #cardNext {
         width: 100%;
         height: 6vh;
+    }
+
+    #settingsIcon {
+        top: 2vh;
+        left: 2vh;
+        width: 4vh;
+        height: 4vh;
+    }
+
+    #settingsContainer {
+        padding: 8vh 2vh 2vh 2vh;
+    }
+
+    .lessonName {
+        margin-bottom: 2vh;
+    }
+
+    .lessonToggle {
+        width: 6vh;
+        height: 4vh;
+        border-radius: 2vh;
+    }
+
+    .lessonToggle::after {
+        width: 4vh;
+        height: 4vh;
+        border-radius: 2vh;
     }
     
   }
