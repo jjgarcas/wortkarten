@@ -58,7 +58,13 @@ function init() {
         if (!remainingWords?.length) initializeCards();
         const index = Math.floor(Math.random() * remainingWords.length);
         const currentWord = remainingWords.splice(index, 1)[0];
-        imgContainer.style.backgroundImage = `url('./assets/${currentWord.image}.png')`;
+        if (currentWord.image) {
+            imgContainer.style.backgroundImage = `url('./assets/${currentWord.image}.png')`;
+            imgContainer.classList.remove('noImage');
+        } else {
+            imgContainer.style.backgroundImage = 'none';
+            imgContainer.classList.add('noImage');
+        }
         imgContainer.innerText = currentWord.translation;
         cardSingular.innerText = `${articles[currentWord.genre]} ${currentWord.singular}${currentWord.plural ? ',' : ''}`;
         cardPlural.innerText = currentWord.plural ? `die ${currentWord.plural}` : '';
