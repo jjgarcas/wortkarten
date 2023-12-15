@@ -134,6 +134,13 @@ body {
     user-select: none;
 }
 
+#counter {
+    position: absolute;
+    bottom: 2vw;
+    right: 2vw;
+    font-size: 2vw;
+}
+
 #settingsIcon {
     position: absolute;
     top: 2vw;
@@ -252,6 +259,12 @@ body {
     #cardNext {
         width: 100%;
         height: 6vh;
+    }
+
+    #counter {
+        bottom: 2vh;
+        right: 2vh;
+        font-size: 2vh;
     }
 
     #settingsIcon {

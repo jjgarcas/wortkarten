@@ -14,10 +14,12 @@ function init() {
     const cardSingular = document.getElementById('cardSingular');
     const cardPlural = document.getElementById('cardPlural');
     const cardNext = document.getElementById('cardNext');
+    const counter = document.getElementById('counter');
     const settingsIcon = document.getElementById('settingsIcon');
     const settingsContainer = document.getElementById('settingsContainer');
     const imagesToggle = document.getElementById('imagesToggle');
 
+    let totalWords;
     let settingsOpened = false;
     let disabledImages = localStorage.getItem('disabledImages') === 'true';
     let prevDisabledImages = disabledImages;
@@ -50,6 +52,7 @@ function init() {
 
     const initializeCards = () => {
         remainingWords = words.filter(({ lesson }) => !disabledLessons.includes(lesson));
+        totalWords = remainingWords.length;
     };
 
     const updateCard = (ev) => {
@@ -70,6 +73,7 @@ function init() {
         cardPlural.innerText = currentWord.plural ? `die ${currentWord.plural}` : '';
         container.classList.remove('reveal', 'genre_f', 'genre_m', 'genre_n');
         container.classList.add(`genre_${currentWord.genre}`);
+        counter.innerText = `${totalWords - remainingWords.length} / ${totalWords}`;
     };
 
     const toggleSettings = (ev) => {
