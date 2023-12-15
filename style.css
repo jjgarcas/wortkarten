@@ -34,6 +34,17 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8vw;
+    text-align: center;
+    color: transparent;
+}
+
+#imgContainer.disabledImages {
+    background-image: none !important;
+    color: black;
 }
 
 .cardContainer {
@@ -91,8 +102,16 @@ body {
     background-color: orange;
 }
 
+#container.bookColors.genre_m .card {
+    background-color: blue;
+}
+
 #container.genre_f .card {
     background-color: blue;
+}
+
+#container.bookColors.genre_f .card {
+    background-color: red;
 }
 
 #container.genre_n .card {
@@ -101,7 +120,6 @@ body {
 
 #cardNext {
     width: 6vw;
-    height: calc(100vh - 10vw);
     background-image: url(./assets/right_arrow.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -145,20 +163,35 @@ body {
     width: calc(100% - 4vw);
     min-height: calc(100% - 10vw);
     padding: 8vw 2vw 2vw 2vw;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
 }
 
-.lessonContainer {
-    display: flex;
+.settingsBlock {
+    border: 2px solid gray;
+    padding: 2vw;
+    border-radius: 2vw;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.lessonName {
-    flex-grow: 1;
+.settingsBlock:not(:last-child) {
     margin-bottom: 2vw;
 }
 
-.lessonToggle {
+.toggleContainer {
+    display: flex;
+    align-items: center;
+}
+
+.toggleContainer:not(:last-child) {
+    margin-bottom: 1vw;
+}
+
+.toggleName {
+    flex-grow: 1;
+}
+
+.toggle {
     width: 6vw;
     height: 4vw;
     border-radius: 2vw;
@@ -166,7 +199,7 @@ body {
     position: relative;
 }
 
-.lessonToggle::after {
+.toggle::after {
     display: block;
     position: absolute;
     right: 0;
@@ -177,7 +210,7 @@ body {
     background-color: #186A02;
 }
 
-.lessonToggle.disabled::after {
+.toggle.disabled::after {
     background-color: gray;
     right: auto;
     left: 0;
@@ -196,6 +229,7 @@ body {
     #imgContainer {
         width: 100%;
         height: calc(50% - 3vh);
+        font-size: 8vh;
     }
 
     .cardContainer {
@@ -232,17 +266,26 @@ body {
         padding: 8vh 2vh 2vh 2vh;
     }
 
-    .lessonName {
-        margin-bottom: 2vh;
+    .settingsBlock {
+        padding: 2vh;
+        border-radius: 2vh;
     }
 
-    .lessonToggle {
+    .settingsBlock:not(:last-child) {
+        margin-bottom: 2vw;
+    }
+
+    .toggleContainer:not(:last-child) {
+        margin-bottom: 1vh;
+    }
+
+    .toggle {
         width: 6vh;
         height: 4vh;
         border-radius: 2vh;
     }
 
-    .lessonToggle::after {
+    .toggle::after {
         width: 4vh;
         height: 4vh;
         border-radius: 2vh;
