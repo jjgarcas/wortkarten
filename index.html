@@ -5,7 +5,8 @@
   <title>Wortkarten</title>
   <link rel="stylesheet" href="style.css"></style>
   
-  <script src="words.js"></script>
+  <script src="names.js"></script>
+  <script src="verbs.js"></script>
   <script src="index.js"></script>
 </head>
 <body onload="init()">
@@ -25,9 +26,19 @@
     <div id="counter"></div>
     <div id="settingsContainer" class="hidden">
         <div class="settingsBlock">
-            <div class="toggleContainer">
+            <div id="imagesToggle" class="toggleContainer">
                 <div class="toggleName">Bilder anzeigen</div>
-                <div id="imagesToggle" class="toggle"></div>
+                <div class="toggle"></div>
+            </div>
+        </div>
+        <div class="settingsBlock">
+            <div id="namesToggle" class="toggleContainer">
+                <div class="toggleName">Namen</div>
+                <div class="toggle"></div>
+            </div>
+            <div id="verbsToggle" class="toggleContainer">
+                <div class="toggleName">Verben</div>
+                <div class="toggle"></div>
             </div>
         </div>
         <div id="lessonsContainer" class="settingsBlock"></div>

@@ -15,7 +15,6 @@ body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .hidden {
@@ -119,6 +118,10 @@ body {
     background-color: green;
 }
 
+#container.verb .card {
+    color: black;
+}
+
 #cardNext {
     width: 6vw;
     background-image: url(./assets/right_arrow.png);
@@ -199,6 +202,10 @@ body {
     flex-grow: 1;
 }
 
+.toggleContainer.disabled .toggleName {
+    color: gray;
+}
+
 .toggle {
     width: 6vw;
     height: 4vw;
@@ -218,7 +225,11 @@ body {
     background-color: #186A02;
 }
 
-.toggle.disabled::after {
+.toggleContainer.disabled .toggle::after {
+    background-color: gray;
+}
+
+.toggleContainer.off .toggle::after {
     background-color: gray;
     right: auto;
     left: 0;
