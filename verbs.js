@@ -50,5 +50,8 @@ const verbs = [
     { value: 'haben', translation: 'tener', lesson: 4 },
     { value: 'raten', translation: 'recomendar', lesson: 4 },
     { value: 'spielen', translation: 'jugar', lesson: 4 },
-    { value: 'finden', translation: 'encontrar', lesson: 4 }
+    { value: 'finden', translation: 'encontrar', lesson: 4 },
+    { value: 'besuchen', translation: 'visitar', lesson: 4 },
+    { value: 'beschreiben', translation: 'describir', lesson: 4 },
+    { value: 'bekommen', translation: 'recibir', lesson: 4 }
 ];

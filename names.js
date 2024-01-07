@@ -109,5 +109,9 @@ const names = [
     { genre: 'n', singular: 'Geodreieck', plural: 'Geodreiecke', translation: 'Escuadra', image: 'geodreieck', lesson: 4 },
     { genre: 'f', singular: 'Büroklammer', plural: 'Büroklammern', translation: 'Clip', image: 'buroklammer', lesson: 4 },
     { genre: 'n', singular: 'Wörterbuch', plural: 'Wörterbücher', translation: 'Diccionario', image: 'worterbuch', lesson: 4 },
-    { genre: 'n', singular: 'Lineal', plural: 'Lineale', translation: 'Regla', image: 'lineal', lesson: 4 }
+    { genre: 'n', singular: 'Lineal', plural: 'Lineale', translation: 'Regla', image: 'lineal', lesson: 4 },
+    { genre: 'm', singular: 'Preis', plural: 'Preise', translation: 'Precio', image: 'preis', lesson: 4 },
+    { genre: 'n', singular: 'Geschäft', plural: 'Geschäfte', translation: 'Negocio', image: '', lesson: 4 },
+    { genre: 'f', singular: 'Fußgängerzone', plural: 'Fußgängerzonen', translation: 'Zona peatonal', image: 'fussgangerzone', lesson: 4 },
+    { genre: 'f', singular: 'Umfrage', plural: 'Umfragen', translation: 'Encuesta', image: 'umfrage', lesson: 4 }
 ];
