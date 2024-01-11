@@ -113,5 +113,13 @@ const names = [
     { genre: 'm', singular: 'Preis', plural: 'Preise', translation: 'Precio', image: 'preis', lesson: 4 },
     { genre: 'n', singular: 'Geschäft', plural: 'Geschäfte', translation: 'Negocio', image: '', lesson: 4 },
     { genre: 'f', singular: 'Fußgängerzone', plural: 'Fußgängerzonen', translation: 'Zona peatonal', image: 'fussgangerzone', lesson: 4 },
-    { genre: 'f', singular: 'Umfrage', plural: 'Umfragen', translation: 'Encuesta', image: 'umfrage', lesson: 4 }
+    { genre: 'f', singular: 'Umfrage', plural: 'Umfragen', translation: 'Encuesta', image: 'umfrage', lesson: 4 },
+    { genre: 'n', singular: 'Geschenk', plural: 'Geschenke', translation: 'Regalo', image: 'geschenk', lesson: 5 },
+    { genre: 'm', singular: 'Helm', plural: 'Helme', translation: 'Casco', image: 'helm', lesson: 5 },
+    { genre: 'n', singular: 'Sofa', plural: 'Sofas', translation: 'Sofá', image: 'sofa', lesson: 5 },
+    { genre: 'n', singular: 'Wohnzimmer', plural: 'Wohnzimmer', translation: 'Cuarto de estar', image: '', lesson: 5 },
+    { genre: 'm', singular: 'Schlittschuh', plural: 'Schlittschuhe', translation: 'Patín de hielo', image: 'schlittschuh', lesson: 5 },
+    { genre: 'm', singular: 'Film', plural: 'Filme', translation: 'Película', image: '', lesson: 5 },
+    { genre: 'f', singular: 'Vermutung', plural: 'Vermutungen', translation: 'Suposición', image: '', lesson: 5 },
+    { genre: 'n', singular: 'Fernsehen', plural: '', translation: 'Televisión', image: 'fernsehen', lesson: 5 }
 ];
