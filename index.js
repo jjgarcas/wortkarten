@@ -16,6 +16,7 @@ function init() {
     const settingsIcon = document.getElementById('settingsIcon');
     const settingsContainer = document.getElementById('settingsContainer');
     const imagesToggle = document.getElementById('imagesToggle');
+    const flipToggle = document.getElementById('flipToggle');
     const namesToggle = document.getElementById('namesToggle');
     const verbsToggle = document.getElementById('verbsToggle');
 
@@ -23,6 +24,8 @@ function init() {
     let settingsOpened = false;
     let disabledImages = localStorage.getItem('disabledImages') === 'true';
     let prevDisabledImages = disabledImages;
+    let disabledFlip = localStorage.getItem('disabledFlip') === 'true';
+    let prevDisabledFlip = disabledFlip;
     let disabledNames = localStorage.getItem('disabledNames') === 'true';
     let prevDisabledNames = disabledNames;
     let disabledVerbs = localStorage.getItem('disabledVerbs') === 'true';
@@ -40,6 +43,11 @@ function init() {
     if (disabledImages) {
         imgContainer.classList.add('disabledImages');
         imagesToggle.classList.add('off');
+    }
+
+    if (disabledFlip) {
+        container.classList.add('disabledFlip');
+        flipToggle.classList.add('off');
     }
 
     if (disabledNames) {
@@ -134,6 +142,15 @@ function init() {
                     imgContainer.classList.remove('disabledImages');
                 }
             }
+            if (prevDisabledFlip !== disabledFlip) {
+                prevDisabledFlip = disabledFlip;
+                localStorage.setItem('disabledFlip', String(disabledFlip));
+                if (disabledFlip) {
+                    container.classList.add('disabledFlip');
+                } else {
+                    container.classList.remove('disabledFlip');
+                }
+            }
         } else {
             settingsOpened = true;
             settingsIcon.classList.add('closeIcon');
@@ -155,6 +172,18 @@ function init() {
         } else {
             disabledImages = true;
             imagesToggle.classList.add('off');
+        }
+    };
+
+    const toggleFlip = (ev) => {
+        ev?.stopPropagation();
+        ev?.preventDefault();
+        if (disabledFlip) {
+            disabledFlip = false;
+            flipToggle.classList.remove('off');
+        } else {
+            disabledFlip = true;
+            flipToggle.classList.add('off');
         }
     };
 
@@ -300,6 +329,7 @@ function init() {
     cardNext.addEventListener('click', updateCard);
     settingsIcon.addEventListener('click', toggleSettings);
     imagesToggle.addEventListener('click', toggleImages);
+    flipToggle.addEventListener('click', toggleFlip);
     namesToggle.addEventListener('click', toggleNames);
     verbsToggle.addEventListener('click', toggleVerbs);
 
