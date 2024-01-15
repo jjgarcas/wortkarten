@@ -121,5 +121,11 @@ const names = [
     { genre: 'm', singular: 'Schlittschuh', plural: 'Schlittschuhe', translation: 'Patín de hielo', image: 'schlittschuh', lesson: 5 },
     { genre: 'm', singular: 'Film', plural: 'Filme', translation: 'Película', image: '', lesson: 5 },
     { genre: 'f', singular: 'Vermutung', plural: 'Vermutungen', translation: 'Suposición', image: '', lesson: 5 },
-    { genre: 'n', singular: 'Fernsehen', plural: '', translation: 'Televisión', image: 'fernsehen', lesson: 5 }
+    { genre: 'n', singular: 'Fernsehen', plural: '', translation: 'Televisión', image: 'fernsehen', lesson: 5 },
+    { genre: 'f', singular: 'Tabelle', plural: 'Tabellen', translation: 'Tabla', image: '', lesson: 5 },
+    { genre: 'f', singular: 'Wiederholung', plural: 'Wiederholungen', translation: 'Repetición', image: '', lesson: 5 },
+    { genre: 'f', singular: 'Gitarre', plural: 'Gitarren', translation: 'Guitarra', image: 'gitarre', lesson: 5 },
+    { genre: 'n', singular: 'Schach', plural: '', translation: 'Ajedrez', image: 'schach', lesson: 5 },
+    { genre: 'f', singular: 'Küche', plural: 'Küchen', translation: 'Cocina', image: 'kuche', lesson: 5 },
+    { genre: 'f', singular: 'Zeit', plural: 'Zeiten', translation: 'Tiempo', image: '', lesson: 5 }
 ];

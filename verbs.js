@@ -68,5 +68,9 @@ const verbs = [
     { value: 'geben', translation: 'dar', lesson: 5 },
     { value: 'schlafen', translation: 'dormir', lesson: 5 },
     { value: 'waschen', translation: 'lavar', lesson: 5 },
-    { value: 'essen', translation: 'comer', lesson: 5 }
+    { value: 'essen', translation: 'comer', lesson: 5 },
+    { value: 'malen', translation: 'pintar', lesson: 5 },
+    { value: 'fernsehen', translation: 'ver la televisión', lesson: 5 },
+    { value: 'schauen', translation: 'mirar', lesson: 5 },
+    { value: 'feiern', translation: 'celebrar', lesson: 5 }
 ];
