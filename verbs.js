@@ -57,7 +57,7 @@ const verbs = [
     { value: 'tanzen', translation: 'bailar', lesson: 5 },
     { value: 'wandern', translation: 'hacer senderismo', lesson: 5 },
     { value: 'fotografieren', translation: 'fotografiar', lesson: 5 },
-    { value: 'fahren', translation: 'montar en', lesson: 5 },
+    { value: 'fahren', translation: 'ir en (medio de transporte)', lesson: 5 },
     { value: 'kochen', translation: 'cocinar', lesson: 5 },
     { value: 'treffen', translation: 'quedar con', lesson: 5 },
     { value: 'schwimmen', translation: 'nadar', lesson: 5 },
@@ -72,5 +72,10 @@ const verbs = [
     { value: 'malen', translation: 'pintar', lesson: 5 },
     { value: 'fernsehen', translation: 'ver la televisión', lesson: 5 },
     { value: 'schauen', translation: 'mirar', lesson: 5 },
-    { value: 'feiern', translation: 'celebrar', lesson: 5 }
+    { value: 'feiern', translation: 'celebrar', lesson: 5 },
+    { value: 'surfen', translation: 'surfear / navegar', lesson: 5 },
+    { value: 'benutzen', translation: 'utilizar', lesson: 5 },
+    { value: 'sammeln', translation: 'recoger / recaudar', lesson: 5 },
+    { value: 'einladen', translation: 'invitar', lesson: 5 },
+    { value: 'aufräumen', translation: 'ordenar', lesson: 5 }
 ];
