@@ -98,11 +98,14 @@ function init() {
         imgContainer.innerText = currentWord.translation;
         cardSingular.innerText = currentWord.genre ? `${articles[currentWord.genre]} ${currentWord.singular}${currentWord.plural ? ',' : ''}` : currentWord.value;
         cardPlural.innerText = currentWord.plural ? `die ${currentWord.plural}` : '';
-        container.classList.remove('reveal', 'genre_f', 'genre_m', 'genre_n', 'verb');
+        container.classList.remove('reveal', 'genre_f', 'genre_m', 'genre_n', 'verb', 'separable');
         if (currentWord.genre) {
             container.classList.add(`genre_${currentWord.genre}`);
         } else {
             container.classList.add('verb');
+            if (currentWord.separable) {
+                container.classList.add('separable');
+            }
         }
         counter.innerText = `${totalWords - remainingWords.length} / ${totalWords}`;
     };

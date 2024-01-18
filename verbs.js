@@ -64,18 +64,18 @@ const verbs = [
     { value: 'laufen', translation: 'correr', lesson: 5 },
     { value: 'erzählen', translation: 'contar', lesson: 5 },
     { value: 'treiben', translation: 'practicar (un deporte)', lesson: 5 },
-    { value: 'aufstehen', translation: 'levantarse', lesson: 5 },
+    { value: 'aufstehen', translation: 'levantarse', separable: true, lesson: 5 },
     { value: 'geben', translation: 'dar', lesson: 5 },
     { value: 'schlafen', translation: 'dormir', lesson: 5 },
     { value: 'waschen', translation: 'lavar', lesson: 5 },
     { value: 'essen', translation: 'comer', lesson: 5 },
     { value: 'malen', translation: 'pintar', lesson: 5 },
-    { value: 'fernsehen', translation: 'ver la televisión', lesson: 5 },
+    { value: 'fernsehen', translation: 'ver la televisión', separable: true, lesson: 5 },
     { value: 'schauen', translation: 'mirar', lesson: 5 },
     { value: 'feiern', translation: 'celebrar', lesson: 5 },
     { value: 'surfen', translation: 'surfear / navegar', lesson: 5 },
     { value: 'benutzen', translation: 'utilizar', lesson: 5 },
     { value: 'sammeln', translation: 'recoger / recaudar', lesson: 5 },
-    { value: 'einladen', translation: 'invitar', lesson: 5 },
-    { value: 'aufräumen', translation: 'ordenar', lesson: 5 }
+    { value: 'einladen', translation: 'invitar', separable: true, lesson: 5 },
+    { value: 'aufräumen', translation: 'ordenar', separable: true, lesson: 5 }
 ];
