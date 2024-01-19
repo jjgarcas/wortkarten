@@ -11,7 +11,8 @@ function init() {
     const cardFront = document.getElementById('cardFront');
     const cardSingular = document.getElementById('cardSingular');
     const cardPlural = document.getElementById('cardPlural');
-    const cardNext = document.getElementById('cardNext');
+    const next = document.getElementById('next');
+    const previous = document.getElementById('previous');
     const counter = document.getElementById('counter');
     const settingsIcon = document.getElementById('settingsIcon');
     const settingsContainer = document.getElementById('settingsContainer');
@@ -20,7 +21,16 @@ function init() {
     const namesToggle = document.getElementById('namesToggle');
     const verbsToggle = document.getElementById('verbsToggle');
 
-    let totalWords;
+    const articles = {
+        m: 'der',
+        f: 'die',
+        n: 'das'
+    };
+
+    let currentWords = [];
+    let currentWordIndex = 0;
+    let totalWords = 0;
+
     let settingsOpened = false;
     let disabledImages = localStorage.getItem('disabledImages') === 'true';
     let prevDisabledImages = disabledImages;
@@ -58,36 +68,71 @@ function init() {
         verbsToggle.classList.add('off');
     }
 
-    const articles = {
-        m: 'der',
-        f: 'die',
-        n: 'das'
-    };
-
-    let remainingWords;
-
     const revealCard = () => {
         container.classList.add('reveal');
     };
 
+    const shuffle = (array) => {
+        let currentIndex = array.length,  randomIndex;
+      
+        // While there remain elements to shuffle.
+        while (currentIndex > 0) {
+      
+          // Pick a remaining element.
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      
+        return array;
+      }
+
     const initializeCards = () => {
+        currentWordIndex = 0;
         if (!disabledNames) {
-            remainingWords = names.filter(({ lesson }) => !disabledLessons.includes(lesson));
+            currentWords = names.filter(({ lesson }) => !disabledLessons.includes(lesson));
         } else {
-            remainingWords = [];
+            currentWords = [];
         }
         if (!disabledVerbs) {
-            remainingWords = [...remainingWords, ...verbs.filter(({ lesson }) => !disabledLessons.includes(lesson))];
+            currentWords = [...currentWords, ...verbs.filter(({ lesson }) => !disabledLessons.includes(lesson))];
         }
-        totalWords = remainingWords.length;
+        currentWords = shuffle(currentWords);
+        totalWords = currentWords.length;
+        previous.classList.add('disabled');
+        updateCard();
     };
 
-    const updateCard = (ev) => {
+    const nextWord = (ev) => {
         ev?.stopPropagation();
         ev?.preventDefault();
-        if (!remainingWords?.length) initializeCards();
-        const index = Math.floor(Math.random() * remainingWords.length);
-        const currentWord = remainingWords.splice(index, 1)[0];
+        currentWordIndex++;
+        if (currentWordIndex >= totalWords) {
+            initializeCards();
+        } else {
+            updateCard();
+            previous.classList.remove('disabled');
+        }
+    };
+
+    const previousWord = (ev) => {
+        ev?.stopPropagation();
+        ev?.preventDefault();
+        if (currentWordIndex > 0) {
+            currentWordIndex--;
+            updateCard();
+            if (currentWordIndex === 0) {
+                previous.classList.add('disabled');
+            }
+        }
+    };
+
+    const updateCard = () => {
+        console.log(`updateCard(${currentWordIndex})`, currentWords);
+        const currentWord = currentWords[currentWordIndex];
         if (currentWord.image) {
             imgContainer.style.backgroundImage = `url('./assets/${currentWord.image}.png')`;
             imgContainer.classList.remove('noImage');
@@ -107,7 +152,7 @@ function init() {
                 container.classList.add('separable');
             }
         }
-        counter.innerText = `${totalWords - remainingWords.length} / ${totalWords}`;
+        counter.innerText = `${currentWordIndex + 1} / ${totalWords}`;
     };
 
     const toggleSettings = (ev) => {
@@ -134,7 +179,6 @@ function init() {
             }
             if (lessonsChanged || namesChanged || verbsChanged) {
                 initializeCards();
-                updateCard();
             }
             if (prevDisabledImages !== disabledImages) {
                 prevDisabledImages = disabledImages;
@@ -329,7 +373,8 @@ function init() {
     };
 
     cardFront.addEventListener('click', revealCard);
-    cardNext.addEventListener('click', updateCard);
+    next.addEventListener('click', nextWord);
+    previous.addEventListener('click', previousWord);
     settingsIcon.addEventListener('click', toggleSettings);
     imagesToggle.addEventListener('click', toggleImages);
     flipToggle.addEventListener('click', toggleFlip);
@@ -337,5 +382,5 @@ function init() {
     verbsToggle.addEventListener('click', toggleVerbs);
 
     addSettings();
-    updateCard();
+    initializeCards();
 }
