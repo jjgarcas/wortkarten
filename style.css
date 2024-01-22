@@ -231,6 +231,10 @@ body {
     border: 1px solid black;
 }
 
+#list td {
+    padding: 1vw;
+}
+
 #list .genre_m {
     background-color: orange;
     color: white;
@@ -254,6 +258,16 @@ body {
 #list .genre_n {
     background-color: green;
     color: white;
+}
+
+#list .verb.separable::after {
+    content: '';
+    position: absolute;
+    width: 3vw;
+    height: 3vw;
+    background-image: url(./assets/scissors-icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #settingsIcon {
@@ -402,6 +416,15 @@ body {
         height: calc(100% - 10vh);
         padding: 8vh 2vh 2vh 2vh;
         font-size: 2vh;
+    }
+
+    #list td {
+        padding: 1vh;
+    }
+
+    #list .verb.separable::after {
+        width: 3vh;
+        height: 3vh;
     }
     
     #settingsIcon {
