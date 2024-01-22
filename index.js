@@ -6,6 +6,7 @@ function init() {
         return acc;
     }, {});
 
+    const body = document.getElementsByTagName('body')[0];
     const container = document.getElementById('container');
     const imgContainer = document.getElementById('imgContainer');
     const cardFront = document.getElementById('cardFront');
@@ -14,10 +15,12 @@ function init() {
     const next = document.getElementById('next');
     const previous = document.getElementById('previous');
     const counter = document.getElementById('counter');
+    const list = document.getElementById('list');
     const settingsIcon = document.getElementById('settingsIcon');
     const settingsContainer = document.getElementById('settingsContainer');
     const imagesToggle = document.getElementById('imagesToggle');
     const flipToggle = document.getElementById('flipToggle');
+    const listToggle = document.getElementById('listToggle');
     const namesToggle = document.getElementById('namesToggle');
     const verbsToggle = document.getElementById('verbsToggle');
 
@@ -28,6 +31,7 @@ function init() {
     };
 
     let currentWords = [];
+    let currentOrderedWords = null;
     let currentWordIndex = 0;
     let totalWords = 0;
 
@@ -36,6 +40,8 @@ function init() {
     let prevDisabledImages = disabledImages;
     let disabledFlip = localStorage.getItem('disabledFlip') === 'true';
     let prevDisabledFlip = disabledFlip;
+    let enabledList = localStorage.getItem('enabledList') === 'true';
+    let prevEnabledList = enabledList;
     let disabledNames = localStorage.getItem('disabledNames') === 'true';
     let prevDisabledNames = disabledNames;
     let disabledVerbs = localStorage.getItem('disabledVerbs') === 'true';
@@ -47,7 +53,7 @@ function init() {
     const lessonToggles = [];
 
     if (flags.bookColors === 'true') {
-        container.classList.add('bookColors');
+        body.classList.add('bookColors');
     }
 
     if (disabledImages) {
@@ -58,6 +64,14 @@ function init() {
     if (disabledFlip) {
         container.classList.add('disabledFlip');
         flipToggle.classList.add('off');
+    }
+
+    if (enabledList) {
+        body.classList.add('enabledList');
+        imagesToggle.classList.add('disabled');
+        flipToggle.classList.add('disabled');
+    } else {
+        listToggle.classList.add('off');
     }
 
     if (disabledNames) {
@@ -88,7 +102,34 @@ function init() {
         }
       
         return array;
-      }
+    }
+
+    const createList = () => {
+        if (currentOrderedWords) {
+            return;
+        }
+        currentOrderedWords = currentWords.sort((a, b) => {
+            const first = a.genre ? a.singular.toLowerCase() : a.value;
+            const second = b.genre ? b.singular.toLowerCase() : b.value;
+            if (first < second) return -1;
+            if (first > second) return 1;
+            return 0;
+        });
+        const container = document.createElement('table');
+        currentOrderedWords.forEach((word) => {
+            const raw = document.createElement('tr');
+            const translation = document.createElement('td');
+            translation.className = 'translation';
+            translation.innerText = word.translation;
+            raw.appendChild(translation);
+            const value = document.createElement('td');
+            value.className = `value${word.genre ? ` genre_${word.genre}` : ' verb'}${word.separable ? ' separable' : ''}`;
+            value.innerText = word.genre ? `${articles[word.genre]} ${word.singular}${word.plural ? `, die ${word.plural}` : ''}` : word.value;
+            raw.appendChild(value);
+            container.appendChild(raw);
+        });
+        list.replaceChildren(container);
+    };
 
     const initializeCards = () => {
         currentWordIndex = 0;
@@ -104,6 +145,9 @@ function init() {
         totalWords = currentWords.length;
         previous.classList.add('disabled');
         updateCard();
+        if (enabledList) {
+            createList();
+        }
     };
 
     const nextWord = (ev) => {
@@ -163,22 +207,19 @@ function init() {
             settingsIcon.classList.remove('closeIcon');
             settingsContainer.classList.add('hidden');
             const lessonsChanged = prevDisabledLessons.length !== disabledLessons.length || disabledLessons.some(lesson => !prevDisabledLessons.includes(lesson));
-            const namesChanged = prevDisabledNames !== disabledNames;
-            const verbsChanged = prevDisabledVerbs !== disabledVerbs;
             if (lessonsChanged) {
                 prevDisabledLessons = [...disabledLessons];
                 localStorage.setItem('disabledLessons', JSON.stringify(disabledLessons));
             }
+            const namesChanged = prevDisabledNames !== disabledNames;
             if (namesChanged) {
                 prevDisabledNames = disabledNames;
                 localStorage.setItem('disabledNames', String(disabledNames));
             }
+            const verbsChanged = prevDisabledVerbs !== disabledVerbs;
             if (verbsChanged) {
                 prevDisabledVerbs = disabledVerbs;
                 localStorage.setItem('disabledVerbs', String(disabledVerbs));
-            }
-            if (lessonsChanged || namesChanged || verbsChanged) {
-                initializeCards();
             }
             if (prevDisabledImages !== disabledImages) {
                 prevDisabledImages = disabledImages;
@@ -197,6 +238,23 @@ function init() {
                 } else {
                     container.classList.remove('disabledFlip');
                 }
+            }
+            const listChanged = prevEnabledList !== enabledList;
+            if (listChanged) {
+                prevEnabledList = enabledList;
+                localStorage.setItem('enabledList', String(enabledList));
+                if (enabledList) {
+                    body.classList.add('enabledList');
+                } else {
+                    body.classList.remove('enabledList');
+                }
+            }
+            if (lessonsChanged || namesChanged || verbsChanged) {
+                currentOrderedWords = null;
+                initializeCards();
+            } else if (listChanged && enabledList) {
+                currentOrderedWords = null;
+                createList();
             }
         } else {
             settingsOpened = true;
@@ -231,6 +289,22 @@ function init() {
         } else {
             disabledFlip = true;
             flipToggle.classList.add('off');
+        }
+    };
+
+    const toggleList = (ev) => {
+        ev?.stopPropagation();
+        ev?.preventDefault();
+        if (enabledList) {
+            enabledList = false;
+            listToggle.classList.add('off');
+            imagesToggle.classList.remove('disabled');
+            flipToggle.classList.remove('disabled');
+        } else {
+            enabledList = true;
+            listToggle.classList.remove('off');
+            imagesToggle.classList.add('disabled');
+            flipToggle.classList.add('disabled');
         }
     };
 
@@ -378,6 +452,7 @@ function init() {
     settingsIcon.addEventListener('click', toggleSettings);
     imagesToggle.addEventListener('click', toggleImages);
     flipToggle.addEventListener('click', toggleFlip);
+    listToggle.addEventListener('click', toggleList);
     namesToggle.addEventListener('click', toggleNames);
     verbsToggle.addEventListener('click', toggleVerbs);
 

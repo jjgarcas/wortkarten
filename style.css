@@ -15,6 +15,7 @@ body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .hidden {
@@ -25,6 +26,10 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
+}
+
+.enabledList #container {
+    display: none;
 }
 
 #imgContainer {
@@ -126,7 +131,7 @@ body {
     background-color: orange;
 }
 
-#container.bookColors.genre_m .card {
+.bookColors #container.genre_m .card {
     background-color: blue;
 }
 
@@ -134,7 +139,7 @@ body {
     background-color: blue;
 }
 
-#container.bookColors.genre_f .card {
+.bookColors #container.genre_f .card {
     background-color: red;
 }
 
@@ -197,6 +202,60 @@ body {
     font-size: 2vw;
 }
 
+.enabledList #counter {
+    display: none;
+}
+
+#list {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 4vw);
+    height: calc(100% - 10vw);
+    padding: 8vw 2vw 2vw 2vw;
+    overflow: auto;
+    font-size: 2vw;
+}
+
+.enabledList #list {
+    display: block;
+}
+
+#list table {
+    width: 100%;
+}
+
+#list tr {
+    background-color: white;
+    border: 1px solid black;
+}
+
+#list .genre_m {
+    background-color: orange;
+    color: white;
+}
+
+.bookColors #list .genre_m {
+    background-color: blue;
+    color: white;
+}
+
+#list .genre_f {
+    background-color: blue;
+    color: white;
+}
+
+.bookColors #list .genre_f {
+    background-color: red;
+    color: white;
+}
+
+#list .genre_n {
+    background-color: green;
+    color: white;
+}
+
 #settingsIcon {
     position: absolute;
     top: 2vw;
@@ -225,10 +284,11 @@ body {
     top: 0;
     left: 0;
     width: calc(100% - 4vw);
-    min-height: calc(100% - 10vw);
+    height: calc(100% - 10vw);
     padding: 8vw 2vw 2vw 2vw;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
+    overflow: auto;
 }
 
 .settingsBlock {
@@ -337,6 +397,13 @@ body {
         font-size: 2vh;
     }
 
+    #list {
+        width: calc(100% - 4vh);
+        height: calc(100% - 10vh);
+        padding: 8vh 2vh 2vh 2vh;
+        font-size: 2vh;
+    }
+    
     #settingsIcon {
         top: 2vh;
         left: 2vh;
@@ -346,7 +413,7 @@ body {
 
     #settingsContainer {
         width: calc(100% - 4vh);
-        min-height: calc(100% - 10vh);
+        height: calc(100% - 10vh);
         padding: 8vh 2vh 2vh 2vh;
     }
 
