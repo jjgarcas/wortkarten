@@ -12,7 +12,7 @@ const verbs = [
     { value: 'passen', translation: 'caber', lesson: 1 },
     { value: 'ergänzen', translation: 'completar', lesson: 1 },
     { value: 'antworten', translation: 'contestar', lesson: 1 },
-    { value: 'wohnen', translation: 'vivir', lesson: 1 },
+    { value: 'wohnen / leben', translation: 'vivir', lesson: 1 },
     { value: 'variieren', translation: 'variar', lesson: 1 },
     { value: 'gehen', translation: 'ir', lesson: 1 },
     { value: 'fragen', translation: 'preguntar', lesson: 1 },
@@ -77,5 +77,14 @@ const verbs = [
     { value: 'benutzen', translation: 'utilizar', lesson: 5 },
     { value: 'sammeln', translation: 'recoger / recaudar', lesson: 5 },
     { value: 'einladen', translation: 'invitar', separable: true, lesson: 5 },
-    { value: 'aufräumen', translation: 'ordenar', separable: true, lesson: 5 }
+    { value: 'aufräumen', translation: 'ordenar', separable: true, lesson: 5 },
+    { value: 'anrufen', translation: 'llamar por teléfono', separable: true, lesson: 5 },
+    { value: 'losgehen', translation: 'irse', separable: true, lesson: 5 },
+    { value: 'ausgehen', translation: 'salir', separable: true, lesson: 5 },
+    { value: 'aufhören', translation: 'terminar', separable: true, lesson: 5 },
+    { value: 'wegfahren / abfahren', translation: 'hacer una escapada', separable: true, lesson: 5 },
+    { value: 'einkaufen', translation: 'hacer la compra', separable: true, lesson: 5 },
+    { value: 'anziehen', translation: 'arrancar', separable: true, lesson: 5 },
+    { value: 'anfangen', translation: 'empezar', separable: true, lesson: 5 },
+    { value: 'zurückkommen', translation: 'regresar de', separable: true, lesson: 5 }
 ];

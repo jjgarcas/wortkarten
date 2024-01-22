@@ -152,5 +152,10 @@ const names = [
     { genre: 'm', singular: 'Samstag', plural: 'Samstage', translation: 'Sábado', image: '', lesson: 5 },
     { genre: 'm', singular: 'Sonntag', plural: 'Sonntage', translation: 'Domingo', image: '', lesson: 5 },
     { genre: 'f', singular: 'Wohnung', plural: 'Wohnungen', translation: 'Vivienda', image: '', lesson: 5 },
-    { genre: 'm', singular: 'Ausflug', plural: 'Ausflüge', translation: 'Excursión', image: '', lesson: 5 }
+    { genre: 'm', singular: 'Ausflug', plural: 'Ausflüge', translation: 'Excursión', image: '', lesson: 5 },
+    { genre: 'm', singular: 'Alltag', plural: '', translation: 'Día de diario', image: '', lesson: 5 },
+    { genre: 'n', singular: 'Interview', plural: 'Interviews', translation: 'Entrevista', image: '', lesson: 5 },
+    { genre: 'f', singular: 'Sehenswürdigkeit', plural: 'Sehenswürdigkeiten', translation: 'Monumento', image: '', lesson: 5 },
+    { genre: 'm', singular: 'Gast', plural: 'Gäste', translation: 'Invitado', image: '', lesson: 5 },
+    { genre: 'n', singular: 'Kind', plural: 'Kinder', translation: 'Niño/a', image: '', lesson: 5 }
 ];
