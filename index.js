@@ -126,7 +126,7 @@ function init() {
         if (currentOrderedWords) {
             return;
         }
-        currentOrderedWords = currentWords.sort((a, b) => {
+        currentOrderedWords = currentWords.toSorted((a, b) => {
             const first = a.genre ? (a.singular || a.plural).toLowerCase() : a.value.replace(verbRegExp, verbReplaceSort);
             const second = b.genre ? (b.singular || b.plural).toLowerCase() : b.value.replace(verbRegExp, verbReplaceSort);
             if (first < second) return -1;
