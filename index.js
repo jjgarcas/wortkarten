@@ -30,6 +30,8 @@ function init() {
         n: 'das'
     };
 
+    const verbRegExp = /\[(\w*)\]/g;
+
     let currentWords = [];
     let currentOrderedWords = null;
     let currentWordIndex = 0;
@@ -104,8 +106,14 @@ function init() {
         return array;
     }
 
+    const verbReplaceText = (_, p1) => `<span class='verbVocalChange'>${p1}</span>`;
+
+    const verbReplaceSort = (_, p1) => p1;
+
+    const getVerbText = (verb) => verb.value.replace(verbRegExp, verbReplaceText);
+
     const getListText = (word) => {
-        if (!word.genre) return word.value;
+        if (!word.genre) return getVerbText(word);
         let text;
         if (word.singular) text = `${articles[word.genre]} ${word.singular},`;
         else text = '-,';
@@ -119,8 +127,8 @@ function init() {
             return;
         }
         currentOrderedWords = currentWords.sort((a, b) => {
-            const first = a.genre ? (a.singular || a.plural).toLowerCase() : a.value;
-            const second = b.genre ? (b.singular || b.plural).toLowerCase() : b.value;
+            const first = a.genre ? (a.singular || a.plural).toLowerCase() : a.value.replace(verbRegExp, verbReplaceSort);
+            const second = b.genre ? (b.singular || b.plural).toLowerCase() : b.value.replace(verbRegExp, verbReplaceSort);
             if (first < second) return -1;
             if (first > second) return 1;
             return 0;
@@ -134,7 +142,7 @@ function init() {
             raw.appendChild(translation);
             const value = document.createElement('td');
             value.className = `value${word.genre ? ` genre_${word.genre}` : ' verb'}${word.separable ? ' separable' : ''}`;
-            value.innerText = getListText(word);
+            value.innerHTML = getListText(word);
             raw.appendChild(value);
             container.appendChild(raw);
         });
@@ -185,7 +193,7 @@ function init() {
     };
 
     const getSingularText = (word) => {
-        if (!word.genre) return word.value;
+        if (!word.genre) return getVerbText(word);
         if (!word.singular) return '-,';
         return `${articles[word.genre]} ${word.singular},`;
     };
@@ -206,8 +214,8 @@ function init() {
             imgContainer.classList.add('noImage');
         }
         imgContainer.innerText = currentWord.translation;
-        cardSingular.innerText = getSingularText(currentWord);
-        cardPlural.innerText = getPluralText(currentWord);
+        cardSingular.innerHTML = getSingularText(currentWord);
+        cardPlural.innerHTML = getPluralText(currentWord);
         container.classList.remove('reveal', 'genre_f', 'genre_m', 'genre_n', 'genre_p', 'verb', 'separable');
         if (currentWord.genre) {
             container.classList.add(`genre_${currentWord.genre}`);

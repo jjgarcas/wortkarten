@@ -122,7 +122,7 @@ const names = [
     { genre: 'm', singular: 'Schlittschuh', plural: 'Schlittschuhe', translation: 'Patín de hielo', image: 'schlittschuh', lesson: 5 },
     { genre: 'm', singular: 'Film', plural: 'Filme', translation: 'Película', image: '', lesson: 5 },
     { genre: 'f', singular: 'Vermutung', plural: 'Vermutungen', translation: 'Suposición', image: '', lesson: 5 },
-    { genre: 'n', singular: 'Fernsehen', plural: '', translation: 'Televisión', image: 'fernsehen', lesson: 5 },
+    { genre: 'n', singular: 'Fernseher', plural: 'Fernseher', translation: 'Televisión', image: 'fernseher', lesson: 5 },
     { genre: 'f', singular: 'Tabelle', plural: 'Tabellen', translation: 'Tabla', image: '', lesson: 5 },
     { genre: 'f', singular: 'Wiederholung', plural: 'Wiederholungen', translation: 'Repetición', image: '', lesson: 5 },
     { genre: 'f', singular: 'Gitarre', plural: 'Gitarren', translation: 'Guitarra', image: 'gitarre', lesson: 5 },
@@ -187,5 +187,7 @@ const names = [
     { genre: 'm', singular: 'Brief', plural: 'Briefe', translation: 'Carta', image: '', lesson: 6 },
     { genre: 'f', singular: 'E-Mail', plural: 'E-Mails', translation: 'Correo electrónico', image: '', lesson: 6 },
     { genre: 'f', singular: 'Laune', plural: 'Launen', translation: 'Capricho', image: '', lesson: 6 },
-    { genre: 'f', singular: 'Person', plural: 'Personen', translation: 'Persona', image: '', lesson: 6 }
+    { genre: 'f', singular: 'Person', plural: 'Personen', translation: 'Persona', image: '', lesson: 6 },
+    { genre: 'n', singular: 'Gespräch', plural: 'Gespräche', translation: 'Conversación', image: '', lesson: 6 },
+    { genre: 'm', singular: 'Tourist(in)', plural: 'Touristen', translation: 'Turista', image: '', lesson: 6 }
 ];

@@ -288,6 +288,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.verbVocalChange {
+    font-style: italic;
+}
+
 #settingsIcon {
     position: absolute;
     top: 2vw;
