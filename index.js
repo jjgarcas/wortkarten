@@ -104,13 +104,23 @@ function init() {
         return array;
     }
 
+    const getListText = (word) => {
+        if (!word.genre) return word.value;
+        let text;
+        if (word.singular) text = `${articles[word.genre]} ${word.singular},`;
+        else text = '-,';
+        if (word.plural) text += ` die ${word.plural}`;
+        else text += ' -';
+        return text;
+    };
+
     const createList = () => {
         if (currentOrderedWords) {
             return;
         }
         currentOrderedWords = currentWords.sort((a, b) => {
-            const first = a.genre ? a.singular.toLowerCase() : a.value;
-            const second = b.genre ? b.singular.toLowerCase() : b.value;
+            const first = a.genre ? (a.singular || a.plural).toLowerCase() : a.value;
+            const second = b.genre ? (b.singular || b.plural).toLowerCase() : b.value;
             if (first < second) return -1;
             if (first > second) return 1;
             return 0;
@@ -124,7 +134,7 @@ function init() {
             raw.appendChild(translation);
             const value = document.createElement('td');
             value.className = `value${word.genre ? ` genre_${word.genre}` : ' verb'}${word.separable ? ' separable' : ''}`;
-            value.innerText = word.genre ? `${articles[word.genre]} ${word.singular}${word.plural ? `, die ${word.plural}` : ''}` : word.value;
+            value.innerText = getListText(word);
             raw.appendChild(value);
             container.appendChild(raw);
         });
@@ -174,8 +184,19 @@ function init() {
         }
     };
 
+    const getSingularText = (word) => {
+        if (!word.genre) return word.value;
+        if (!word.singular) return '-,';
+        return `${articles[word.genre]} ${word.singular},`;
+    };
+
+    const getPluralText = (word) => {
+        if (!word.genre) return '';
+        if (!word.plural) return '-';
+        return `die ${word.plural}`;
+    };
+
     const updateCard = () => {
-        console.log(`updateCard(${currentWordIndex})`, currentWords);
         const currentWord = currentWords[currentWordIndex];
         if (currentWord.image) {
             imgContainer.style.backgroundImage = `url('./assets/${currentWord.image}.png')`;
@@ -185,9 +206,9 @@ function init() {
             imgContainer.classList.add('noImage');
         }
         imgContainer.innerText = currentWord.translation;
-        cardSingular.innerText = currentWord.genre ? `${articles[currentWord.genre]} ${currentWord.singular}${currentWord.plural ? ',' : ''}` : currentWord.value;
-        cardPlural.innerText = currentWord.plural ? `die ${currentWord.plural}` : '';
-        container.classList.remove('reveal', 'genre_f', 'genre_m', 'genre_n', 'verb', 'separable');
+        cardSingular.innerText = getSingularText(currentWord);
+        cardPlural.innerText = getPluralText(currentWord);
+        container.classList.remove('reveal', 'genre_f', 'genre_m', 'genre_n', 'genre_p', 'verb', 'separable');
         if (currentWord.genre) {
             container.classList.add(`genre_${currentWord.genre}`);
         } else {

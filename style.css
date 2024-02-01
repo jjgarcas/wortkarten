@@ -147,6 +147,14 @@ body {
     background-color: green;
 }
 
+#container.genre_p .card {
+    background-color: purple;
+}
+
+.bookColors #container.genre_p .card {
+    background-color: orange;
+}
+
 #container.verb .card {
     color: black;
 }
@@ -257,6 +265,16 @@ body {
 
 #list .genre_n {
     background-color: green;
+    color: white;
+}
+
+#list .genre_p {
+    background-color: purple;
+    color: white;
+}
+
+.bookColors #list .genre_p {
+    background-color: orange;
     color: white;
 }
 
