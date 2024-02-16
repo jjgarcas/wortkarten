@@ -102,5 +102,8 @@ const verbs = [
     { value: 'zusagen', translation: 'aceptar una invitación', separable: true, lesson: 6 },
     { value: 'absagen', translation: 'excusarse', separable: true, lesson: 6 },
     { value: 'anspr[e]chen', translation: 'dirigir la palabra a', separable: true, lesson: 6 },
-    { value: 'ans[e]hen', translation: 'contemplar', separable: true, lesson: 6 }
+    { value: 'ans[e]hen', translation: 'contemplar', separable: true, lesson: 6 },
+    { value: 'vermissen', translation: 'echar de menos', lesson: 6 },
+    { value: 'schenken', translation: 'regalar', lesson: 6 },
+    { value: 'trinken', translation: 'beber', lesson: 7 }
 ];
