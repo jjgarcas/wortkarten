@@ -105,5 +105,7 @@ const verbs = [
     { value: 'ans[e]hen', translation: 'contemplar', separable: true, lesson: 6 },
     { value: 'vermissen', translation: 'echar de menos', lesson: 6 },
     { value: 'schenken', translation: 'regalar', lesson: 6 },
-    { value: 'trinken', translation: 'beber', lesson: 7 }
+    { value: 'trinken', translation: 'beber', lesson: 7 },
+    { value: 'm[ü]ssen', translation: 'tener que', lesson: 7 },
+    { value: 'mitkommen', translation: 'venir(se) / acompañar', separable: true, lesson: 7 }
 ];
