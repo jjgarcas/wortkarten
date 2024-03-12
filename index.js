@@ -30,7 +30,7 @@ function init() {
         n: 'das'
     };
 
-    const verbRegExp = /\[(.*)\]/g;
+    const verbRegExp = /\[([^\]]*)\]/g;
 
     let currentWords = [];
     let currentOrderedWords = null;
