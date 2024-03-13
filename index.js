@@ -149,15 +149,22 @@ function init() {
         list.replaceChildren(container);
     };
 
+    const filterLessons = ({ lesson }) => {
+        if (typeof lesson === 'number') {
+            return !disabledLessons.includes(lesson);
+        }
+        return lesson.some((currentLesson) => !disabledLessons.includes(currentLesson));
+    };
+
     const initializeCards = () => {
         currentWordIndex = 0;
         if (!disabledNames) {
-            currentWords = names.filter(({ lesson }) => !disabledLessons.includes(lesson));
+            currentWords = names.filter(filterLessons);
         } else {
             currentWords = [];
         }
         if (!disabledVerbs) {
-            currentWords = [...currentWords, ...verbs.filter(({ lesson }) => !disabledLessons.includes(lesson))];
+            currentWords = [...currentWords, ...verbs.filter(filterLessons)];
         }
         currentWords = shuffle(currentWords);
         totalWords = currentWords.length;
@@ -425,16 +432,21 @@ function init() {
         }
     };
 
+    const gatherAllLessons = (acc, value) => {
+        if (typeof value.lesson === 'number') {
+            if (!acc.includes(value.lesson)) acc.push(value.lesson);
+        } else {
+            value.lesson.forEach((lesson) => {
+                if (!acc.includes(lesson)) acc.push(lesson);
+            });
+        }
+        return acc;
+    }
+
     const addSettings = () => {
         const lessonsContainer = document.getElementById('lessonsContainer');
-        nameLessons = names.reduce((acc, value) => {
-            if (!acc.includes(value.lesson)) acc.push(value.lesson);
-            return acc;
-        }, []);
-        verbLessons = verbs.reduce((acc, value) => {
-            if (!acc.includes(value.lesson)) acc.push(value.lesson);
-            return acc;
-        }, []);
+        nameLessons = names.reduce(gatherAllLessons, []);
+        verbLessons = verbs.reduce(gatherAllLessons, []);
         lessons = [...nameLessons, ...verbLessons].sort((a, b) => a - b).filter((value, index, array) => index === 0 || value !== array[index - 1]);
 
         const container = document.createElement('div');

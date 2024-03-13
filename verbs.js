@@ -117,5 +117,7 @@ const verbs = [
     { value: 'dürfen', translation: 'poder (permiso)', lesson: 7 },
     { value: 'können', translation: 'poder (capacidad)', lesson: 7 },
     { value: 'empf[e]hlen', translation: 'recomendar', lesson: 7 },
-    { value: 'bestellen', translation: 'pedir / encargar', lesson: 7 }
+    { value: 'bestellen', translation: 'pedir / encargar', lesson: 7 },
+    { value: 'ausschl[a]fen', translation: 'dormir a su gusto', separable: true, lesson: 8 },
+    { value: 'holen', translation: '(ir a) buscar', lesson: 8 }
 ];
