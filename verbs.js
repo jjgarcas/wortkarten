@@ -119,5 +119,8 @@ const verbs = [
     { value: 'empf[e]hlen', translation: 'recomendar', lesson: 7 },
     { value: 'bestellen', translation: 'pedir / encargar', lesson: 7 },
     { value: 'ausschl[a]fen', translation: 'dormir a su gusto', separable: true, lesson: 8 },
-    { value: 'holen', translation: '(ir a) buscar', lesson: 8 }
+    { value: 'holen', translation: '(ir a) buscar', lesson: 8 },
+    { value: 'telefonieren', translation: 'hablar por teléfono', lesson: 8 },
+    { value: 'abholen', translation: 'recoger', separable: true, lesson: 8 },
+    { value: 'liefern', translation: 'entregar / suministrar', lesson: 8 }
 ];
