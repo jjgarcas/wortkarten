@@ -199,7 +199,7 @@ const names = [
     { genre: 'm', singular: 'Tipp', plural: 'Tipps', translation: 'Consejo', image: '', lesson: 6 },
     { genre: 'f', singular: 'Praline', plural: 'Pralinen', translation: 'Bombón', image: '', lesson: 6 },
     { genre: 'n', singular: 'Geld', plural: '', translation: 'Dinero', image: '', lesson: 6 },
-    { genre: 'm', singular: 'Chef(in)', plural: 'Chef(innen)', translation: 'Jefe', image: '', lesson: 6 },
+    { genre: 'm', singular: 'Chef(in)', plural: 'Chefs(innen)', translation: 'Jefe', image: '', lesson: 6 },
     { genre: 'f', singular: 'Blume', plural: 'Blumen', translation: 'Flor', image: '', lesson: 6 },
     { genre: 'n', singular: 'Land', plural: 'Länder', translation: 'País', image: '', lesson: 6 },
     { genre: 'f', singular: 'Katze', plural: 'Katzen', translation: 'Gato', image: '', lesson: 6 },
@@ -293,5 +293,18 @@ const names = [
     { genre: 'm', singular: 'Termin', plural: 'Termine', translation: 'Cita', image: '', lesson: 8 },
     { genre: 'f', singular: 'Pause', plural: 'Pausen', translation: 'Pausa / Descanso', image: '', lesson: 8 },
     { genre: 'f', singular: 'Post', plural: '', translation: 'Correo', image: '', lesson: 8 },
-    { genre: 'm', singular: 'Kollege(in)', plural: 'Kollege(innen)', translation: 'Colega / Compañero', image: '', lesson: 8 }
+    { genre: 'm', singular: 'Kollege(in)', plural: 'Kollegen(innen)', translation: 'Colega / Compañero', image: '', lesson: 8 },
+    { genre: 'm', singular: 'Liebling', plural: 'Lieblinge', translation: 'Favorito', image: '', lesson: 8 },
+    { genre: 'm', singular: 'Januar', plural: 'Januare', translation: 'Enero', image: '', lesson: 8 },
+    { genre: 'm', singular: 'Februar', plural: 'Februare', translation: 'Febrero', image: '', lesson: 8 },
+    { genre: 'm', singular: 'März', plural: 'Märze', translation: 'Marzo', image: '', lesson: 8 },
+    { genre: 'm', singular: 'April', plural: 'Aprile', translation: 'Abril', image: '', lesson: 8 },
+    { genre: 'm', singular: 'Mai', plural: 'Maie', translation: 'Mayo', image: '', lesson: 8 },
+    { genre: 'm', singular: 'Juni', plural: 'Junis', translation: 'Junio', image: '', lesson: 8 },
+    { genre: 'm', singular: 'Juli', plural: 'Julis', translation: 'Julio', image: '', lesson: 8 },
+    { genre: 'm', singular: 'August', plural: 'Auguste', translation: 'Agosto', image: '', lesson: 8 },
+    { genre: 'm', singular: 'September', plural: 'September', translation: 'Septiembre', image: '', lesson: 8 },
+    { genre: 'm', singular: 'Oktober', plural: 'Oktober', translation: 'Octubre', image: '', lesson: 8 },
+    { genre: 'm', singular: 'November', plural: 'November', translation: 'Noviembre', image: '', lesson: 8 },
+    { genre: 'm', singular: 'Dezember', plural: 'Dezember', translation: 'Diciembre', image: '', lesson: 8 }
 ];

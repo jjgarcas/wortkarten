@@ -50,7 +50,7 @@ const verbs = [
     { value: 'kosten', translation: 'costar', lesson: 4 },
     { value: 'haben', translation: 'tener', lesson: 4 },
     { value: 'r[a]ten', translation: 'recomendar', lesson: 4 },
-    { value: 'spielen', translation: 'jugar', lesson: 4 },
+    { value: 'spielen', translation: 'jugar / tocar instrumento', lesson: 4 },
     { value: 'finden', translation: 'encontrar', lesson: 4 },
     { value: 'besuchen', translation: 'visitar', lesson: 4 },
     { value: 'beschreiben', translation: 'describir', lesson: 4 },
@@ -62,7 +62,7 @@ const verbs = [
     { value: 'kochen', translation: 'cocinar', lesson: 5 },
     { value: 'tr[e]ffen', translation: 'quedar con', lesson: 5 },
     { value: 'schwimmen', translation: 'nadar', lesson: 5 },
-    { value: 'l[a]ufen', translation: 'correr', lesson: 5 },
+    { value: 'l[a]ufen', translation: 'andar / correr', lesson: 5 },
     { value: 'treiben', translation: 'practicar (un deporte)', lesson: 5 },
     { value: 'aufstehen', translation: 'levantarse', separable: true, lesson: 5 },
     { value: 'g[e]ben', translation: 'dar', lesson: 5 },
@@ -122,5 +122,6 @@ const verbs = [
     { value: 'holen', translation: '(ir a) buscar', lesson: 8 },
     { value: 'telefonieren', translation: 'hablar por teléfono', lesson: 8 },
     { value: 'abholen', translation: 'recoger', separable: true, lesson: 8 },
-    { value: 'liefern', translation: 'entregar / suministrar', lesson: 8 }
+    { value: 'liefern', translation: 'entregar / suministrar', lesson: 8 },
+    { value: 'gehören', translation: 'pertenecer', lesson: 8 }
 ];
